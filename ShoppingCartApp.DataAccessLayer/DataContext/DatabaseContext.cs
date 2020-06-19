@@ -10,29 +10,6 @@ namespace ShoppingCartApp.DataAccessLayer.DataContext
 {
     public class DatabaseContext:DbContext
     {
-        //public class OptionBuilder
-        //{
-        //    public OptionBuilder()
-        //    {
-        //        settings = new AppConfiguration();
-        //        opsBuilder = new DbContextOptionsBuilder<DatabaseContext>();
-        //        opsBuilder.UseSqlServer(settings.sqlConnectionString);
-        //        dbOptions = opsBuilder.Options;
-
-        //    }
-        //    public DbContextOptionsBuilder<DatabaseContext> opsBuilder { get; set; }
-
-        //    public DbContextOptions<DatabaseContext> dbOptions { get; set; }
-            
-        //    private AppConfiguration settings { get; set; }
-        //}
-
-        //public static OptionBuilder ops = new OptionBuilder();
-
-        //public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
-        //{
-            
-        //}
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Order> Orders { get; set; }
 
