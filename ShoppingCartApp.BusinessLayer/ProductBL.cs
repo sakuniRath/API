@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.Runtime.InteropServices;
+using ShoppingCartApp.BusinessLayer.Models;
 
 namespace ShoppingCartApp.BusinessLayer
 {
@@ -14,10 +15,27 @@ namespace ShoppingCartApp.BusinessLayer
     {
         private IProductList productList = new ProductListFunction();
 
-        public async Task<List<Product>> GetAllProductList()
+
+        public async Task<List<ProductModel>> GetAllProductList()
         {
+            List<ProductModel> pm = new List<ProductModel>();
             List<Product> productAllList = await productList.GetAllProductList();
-            return productAllList;
+            foreach (var product in productAllList)
+            {
+                pm.Add(new ProductModel()
+                {
+
+                    ProductId = product.ProductId,
+                    ProductName = product.ProductName,
+                    UnitPrice = product.UnitPrice,
+                    Stock = product.Stock,
+                    Image = "/Images/" + product.Image
+                }) ;
+
+
+            }
+
+            return pm;
         }
     }
 }
