@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace ShoppingCartApp
 {
@@ -25,6 +26,7 @@ namespace ShoppingCartApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,6 +36,10 @@ namespace ShoppingCartApp
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors(options => options.WithOrigins("http://localhost:4200")
+            .AllowAnyMethod()
+            .AllowAnyHeader());
             app.UseStaticFiles();
             app.UseRouting();
 
