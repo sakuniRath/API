@@ -28,7 +28,7 @@ namespace ShoppingCartApp.UnitTestProject
             });
             //mock.Setup(p => p.GetAllProductList()).Returns(ob);
             ProductListController pl = new ProductListController(mock.Object);
-            Task<IActionResult> result = pl.Get();
+            Task<IActionResult> result = pl.GetProductList();
             Assert.AreEqual(ob, result);
             
             

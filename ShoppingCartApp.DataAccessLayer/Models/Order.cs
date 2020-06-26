@@ -8,15 +8,13 @@ namespace ShoppingCartApp.DataAccessLayer.Models
 {
     public class Order
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int OrderId { get; set; }
         [Required]
         public DateTime OrderDate { get; set; }
         [Required]
-        public double TotalAmount { get; set; }
+        public decimal TotalAmount { get; set; }
         [Required]
-        public double Discount { get; set; }
+        public decimal Discount { get; set; }
         [Required]
         public string ShipAddress { get; set; }
        

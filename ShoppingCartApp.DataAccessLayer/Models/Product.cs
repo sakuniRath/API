@@ -8,15 +8,13 @@ namespace ShoppingCartApp.DataAccessLayer.Models
 {
     public class Product
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ProductId { get; set; }
         [Required]
         public string ProductName { get; set; }
         [Required]
         public int Stock { get; set; }
         [Required]
-        public double UnitPrice { get; set; }
+        public decimal UnitPrice { get; set; }
         [Required]
         public string Image { get; set; }
         [Required]

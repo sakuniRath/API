@@ -8,8 +8,7 @@ namespace ShoppingCartApp.DataAccessLayer.Models
 {
     public class OrderDetail
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+       
         public int OrderDetailId { get; set; }
         [ForeignKey("Order")]
         public int OrderId { get; set; }
@@ -18,7 +17,7 @@ namespace ShoppingCartApp.DataAccessLayer.Models
         [Required]
         public int Quntity { get; set; }
         [Required]
-        public int UnitPrice { get; set; }
+        public decimal  UnitPrice { get; set; }
         public virtual Product Products { get; set; }
         public virtual Order Orders { get; set; }
 

@@ -29,7 +29,7 @@ namespace ShoppingCartApp.Controllers
             _service = service;
         }
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> GetProductList()
         {
             List<ProductModel> products = await _service.GetAllProductList();
             return Ok(products);

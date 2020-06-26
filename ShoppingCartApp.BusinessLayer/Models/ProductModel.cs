@@ -12,7 +12,7 @@ namespace ShoppingCartApp.BusinessLayer.Models
 
         public int Stock { get; set; }
 
-        public double UnitPrice { get; set; }
+        public decimal UnitPrice { get; set; }
 
         public string Image { get; set; }
 

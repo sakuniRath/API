@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ShoppingCartApp.DataAccessLayer.Migrations
 {
-    public partial class InitDb : Migration
+    public partial class initDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -47,7 +47,7 @@ namespace ShoppingCartApp.DataAccessLayer.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ProductName = table.Column<string>(nullable: false),
                     Stock = table.Column<int>(nullable: false),
-                    UnitPrice = table.Column<double>(nullable: false),
+                    UnitPrice = table.Column<decimal>(nullable: false),
                     Image = table.Column<string>(nullable: false),
                     CategoryId = table.Column<int>(nullable: false)
                 },
@@ -69,8 +69,8 @@ namespace ShoppingCartApp.DataAccessLayer.Migrations
                     OrderId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     OrderDate = table.Column<DateTime>(nullable: false),
-                    TotalAmount = table.Column<double>(nullable: false),
-                    Discount = table.Column<double>(nullable: false),
+                    TotalAmount = table.Column<decimal>(nullable: false),
+                    Discount = table.Column<decimal>(nullable: false),
                     ShipAddress = table.Column<string>(nullable: false),
                     CustomerId = table.Column<int>(nullable: false)
                 },
@@ -94,7 +94,7 @@ namespace ShoppingCartApp.DataAccessLayer.Migrations
                     OrderId = table.Column<int>(nullable: false),
                     ProductId = table.Column<int>(nullable: false),
                     Quntity = table.Column<int>(nullable: false),
-                    UnitPrice = table.Column<int>(nullable: false)
+                    UnitPrice = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
                 {

@@ -8,8 +8,7 @@ namespace ShoppingCartApp.DataAccessLayer.Models
 {
     public class Customer
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        
         public int CustomerId { get; set; }
         [Required]
         public string FirstName { get; set; }

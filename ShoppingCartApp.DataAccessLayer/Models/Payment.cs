@@ -8,8 +8,7 @@ namespace ShoppingCartApp.DataAccessLayer.Models
 {
     public class Payment
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        
         public int PaymentId { get; set; }
         [Required]
         public string PaymentMethod { get; set; }
